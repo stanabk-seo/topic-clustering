@@ -125,7 +125,7 @@ else:
     # final_df.fillna('No Data')
     st.subheader('SERP Data')
     st.dataframe(final_df)
-    csv = final_df.to_csv().encode('utf-8')
+    #csv = final_df.to_csv().encode('utf-8')
     # ste.download_button(label='Download SERP Data', data=csv,file_name='serp_data.csv',mime='text/csv')
     # print(final_df)
 
@@ -184,10 +184,10 @@ else:
 
     st.subheader('Topic Clusters')
     st.write(final_df_4)
-    csv = final_df_4.to_csv().encode('utf-8')
+    #csv = final_df_4.to_csv().encode('utf-8')
     ste.download_button(label='Download Topic Clusters', data=csv,file_name='topic_clusters.csv',mime='text/csv')
 
-    final_df_4.to_csv('~/Desktop/python_scripts/similarity_checker/cluster_output.csv')
+    #final_df_4.to_csv('~/Desktop/python_scripts/similarity_checker/cluster_output.csv')
 
     # preparing_df_for_treemap
 
