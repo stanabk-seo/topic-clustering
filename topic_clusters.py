@@ -96,10 +96,12 @@ else:
 
         try:
             featured_snippet = json_results["answer_box"]["answers"][0]["source"]["link"]
+            featured_snippet = featured_snippet.replace("'", "")
             all_data.append((query,featured_snippet,volume))
         except:
             try:
                 featured_snippet = json_results["answer_box"]["link"]
+                featured_snippet = featured_snippet.replace("'", "")
                 all_data.append((query,featured_snippet,volume))
             except:
                 all_data.append((query, 'no_featured_snippet', volume))
