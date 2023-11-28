@@ -16,7 +16,12 @@ st.header('Keyword Clustering by SERP Similarity', divider='rainbow')
 st.subheader("Upload a CSV (UTF-8) file with Keywords and Search Volume.")
 st.link_button("Download Sample File", "https://drive.google.com/uc?export=download&id=1guDxWCz1gYev6cq4JYHY_KTyjPHBneiN")
 
-file = st.file_uploader('Upload CSV File', type='csv')
+@st.cache(allow_output_mutation=True)
+def load_data(file):
+    df = pd.read_csv(file, encoding='utf-8')
+    return df
+
+uploaded_file = st.file_uploader('Upload CSV File', type='csv')
 
 
 col3, col4 = st.columns(2)
@@ -35,8 +40,9 @@ elif location == "Choose Country":
     st.write("Please Select Country")
 else:
     #main_code_starts_here
-    
-    data = pd.read_csv(file, encoding='utf-8')
+
+    data = load_data(uploaded_file)
+    # data = pd.read_csv(file, encoding='utf-8')
     no_of_keywords = len(data['keywords'])
     st.markdown('**Your Data:**')
     st.caption('You have uploaded ' + str(no_of_keywords) + ' keywords.')
