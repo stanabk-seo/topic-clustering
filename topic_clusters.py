@@ -231,7 +231,7 @@ else:
     st.subheader('Topic Cluster Graph')
     st.plotly_chart(fig, use_container_width=True)
 
-st.write("@author: abhishek.shukla")
+st.write("made by: abhishek.shukla")
 st.write("Facing issues?")
 href2 = f'<a href="https://www.linkedin.com/in/abhishekshukla01/">DM me on Linkedin</a>'
 href3 = f'<a href="https://twitter.com/StanAbK">DM me on Twitter</a>'
