@@ -16,7 +16,7 @@ st.header('Keyword Clustering by SERP Similarity', divider='rainbow')
 st.subheader("Upload a CSV (UTF-8) file with Keywords and Search Volume.")
 st.link_button("Download Sample File", "https://drive.google.com/uc?export=download&id=1guDxWCz1gYev6cq4JYHY_KTyjPHBneiN")
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data
 def load_data(file):
     df = pd.read_csv(file, encoding='utf-8')
     return df
@@ -32,7 +32,7 @@ with col3:
 with col4:
     location = st.selectbox("**Choose Country:**",("Choose Country","United States", "India", "United Kingdom","Australia","Canada"), placeholder='Choose Country')
 
-if file is None:
+if uploaded_file is None:
     st.write('')
 elif not serp_api_key:
     st.write("Please enter SERP API Key")
