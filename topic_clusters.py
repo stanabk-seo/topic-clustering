@@ -68,6 +68,7 @@ else:
 
         progress_text = 'Scraping SERP. Please wait. ' + str(round(((k+1)/no_of_keywords)*100)) + '% Completed. Current keyword: ' + str(i)
         my_bar.progress(int(((k+1)/no_of_keywords)*100), text=progress_text)
+        print(progress_text)
 
 
         try:
