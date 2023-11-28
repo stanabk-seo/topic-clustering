@@ -27,8 +27,6 @@ with col3:
 with col4:
     location = st.selectbox("**Choose Country:**",("Choose Country","United States", "India", "United Kingdom","Australia","Canada"), placeholder='Choose Country')
 
-print(type(serp_api_key))
-
 if file is None:
     st.write('')
 elif not serp_api_key:
@@ -66,6 +64,7 @@ else:
         'hl': 'en'
         }
 
+        print('Scraping Started')
         progress_text = 'Scraping SERP. Please wait. ' + str(round(((k+1)/no_of_keywords)*100)) + '% Completed. Current keyword: ' + str(i)
         my_bar.progress(int(((k+1)/no_of_keywords)*100), text=progress_text)
         print(progress_text)
