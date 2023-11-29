@@ -47,7 +47,7 @@ else:
     no_of_keywords = len(data['keywords'])
     st.markdown('**Your Data:**')
     st.caption('You have uploaded ' + str(no_of_keywords) + ' keywords.')
-    current_time = datetime.now().time()
+    # current_time = datetime.now().time()
     st.caption(current_time)
     st.write(data)
     # data = pd.read_csv(r'~/Desktop/python_scripts/similarity_checker/keywords.csv', encoding='latin-1')
@@ -135,9 +135,9 @@ else:
     final_df = df[['topic','serp_data','search_volume']]
     # final_df.fillna('No Data')
     st.subheader('SERP Data')
-    st.dataframe(final_df.head(100))
+    st.dataframe(final_df.head(50))
     #csv = final_df.to_csv().encode('utf-8')
-    # ste.download_button(label='Download SERP Data', data=csv,file_name='serp_data.csv',mime='text/csv')
+    ste.download_button(label='Download Full SERP Data', data=csv,file_name='serp_data.csv',mime='text/csv')
     # print(final_df)
 
     # topic_clustering
@@ -196,7 +196,7 @@ else:
     st.subheader('Topic Clusters')
     st.write(final_df_4.head(100))
     csv = final_df_4.to_csv().encode('utf-8')
-    ste.download_button(label='Download Topic Clusters', data=csv,file_name='topic_clusters.csv',mime='text/csv')
+    ste.download_button(label='Download All Topic Clusters', data=csv,file_name='topic_clusters.csv',mime='text/csv')
 
     #final_df_4.to_csv('~/Desktop/python_scripts/similarity_checker/cluster_output.csv')
 
