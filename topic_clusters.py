@@ -48,7 +48,7 @@ else:
     st.markdown('**Your Data:**')
     st.caption('You have uploaded ' + str(no_of_keywords) + ' keywords.')
     # current_time = datetime.now().time()
-    st.caption(current_time)
+    # st.caption(current_time)
     st.write(data)
     # data = pd.read_csv(r'~/Desktop/python_scripts/similarity_checker/keywords.csv', encoding='latin-1')
     queries = data['keywords'].tolist()
